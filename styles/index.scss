@@ -132,10 +132,10 @@ main {
       }
 
       &.Work {
-        background: url('./images/icon-work.svg');
-        background-repeat: no-repeat;
-        background-position-x: 90%;
-        background-position-y: -1rem;
+        // background: url('./images/icon-work.svg');
+        // background-repeat: no-repeat;
+        // background-position-x: 90%;
+        // background-position-y: -1rem;
 
         &::before {
           background: $light_red_w;
@@ -143,55 +143,30 @@ main {
       }
 
       &.Play {
-        background: url('./images/icon-play.svg');
-        background-repeat: no-repeat;
-        background-position-x: 90%;
-        background-position-y: -.8rem;
-
         &::before {
           background: $soft_blue;
         }
       }
 
       &.Study {
-        background: url('./images/icon-study.svg');
-        background-repeat: no-repeat;
-        background-position-x: 90%;
-        background-position-y: -.2rem;
-
         &::before {
           background: $light_red_s;
         }
       }
       
       &.Exercise {
-        background: url('./images/icon-exercise.svg');
-        background-repeat: no-repeat;
-        background-position-x: 90%;
-        background-position-y: -.2rem;
-
         &::before {
           background: $lime_green;
         }
       }
       
       &.Social {
-        background: url('./images/icon-social.svg');
-        background-repeat: no-repeat;
-        background-position-x: 90%;
-        background-position-y: -1rem;
-
         &::before {
           background: $violet;
         }
       }
 
       &[class*='Self Care'] {
-        background: url('./images/icon-self-care.svg');
-        background-repeat: no-repeat;
-        background-position-x: 90%;
-        background-position-y: -1rem;
-
         &::before {
           background: $soft_orange;
         }

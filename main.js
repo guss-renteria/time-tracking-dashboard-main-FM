@@ -5,6 +5,13 @@ import './styles/index.lg.scss'
 
 import { data } from './times.data'
 
+import icon_work from './images/icon-work.svg'
+import icon_play from './images/icon-play.svg'
+import icon_study from './images/icon-study.svg'
+import icon_exercise from './images/icon-exercise.svg'
+import icon_social from './images/icon-social.svg'
+import icon_self_care from './images/icon-self-care.svg'
+
 const options = document.querySelector('div.profile-options')?.children
 const cards = document.querySelector('section.cards')
 
@@ -35,6 +42,7 @@ const loadElements = (pos) => {
   }
 
   stopMenuPropagation()
+  importBackgroundImages()
   return cards.children
 }
 
@@ -78,6 +86,44 @@ const stopMenuPropagation = () => {
   }
 }
 
+// [+] agrega svg para evitar errores en importaciónes de imagenes
+// TODO: corregir importación de imagenes con desde SASS
+const importBackgroundImages = () => {
+  console.log('[+] importBackgroundImages()')
+
+  let cards = document.querySelectorAll('.card')
+  for(let card of cards) {
+
+    if([...card.classList].includes('Work')) {
+      card.style.background = `url(${ icon_work })`
+      card.style.backgroundPositionY = '-1rem'
+    }
+    else if([...card.classList].includes('Play')) {
+      card.style.background = `url(${ icon_play })`
+      card.style.backgroundPositionY = '-.8rem'
+    }
+    else if([...card.classList].includes('Study')) {
+      card.style.background = `url(${ icon_study })`
+      card.style.backgroundPositionY = '-.2rem'
+    }
+    else if([...card.classList].includes('Exercise')) {
+      card.style.background = `url(${ icon_exercise })`
+      card.style.backgroundPositionY = '-.2rem'
+    }
+    else if([...card.classList].includes('Social')) {
+      card.style.background = `url(${ icon_social })`
+      card.style.backgroundPositionY = '-1rem'
+    }
+    else if([...card.classList].includes('Self') && [...card.classList].includes('Care')) {
+      card.style.background = `url(${ icon_self_care })`
+      card.style.backgroundPositionY = '-1rem'
+    }
+
+    card.style.backgroundRepeat = 'no-repeat'
+    card.style.backgroundPositionX = '90%'
+  }
+}
+
 // [*] START
 
 // cargar eventos
@@ -85,4 +131,3 @@ loadEvents()
 
 // * iniciar elementos
 loadElements(0)
-stopMenuPropagation()
