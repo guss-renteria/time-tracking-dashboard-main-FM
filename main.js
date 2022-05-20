@@ -1,7 +1,7 @@
-import './normalize.css'
-import './index.scss'
-import './index.md.scss'
-import './index.lg.scss'
+import './styles/normalize.css'
+import './styles/index.scss'
+import './styles/index.md.scss'
+import './styles/index.lg.scss'
 
 import { data } from './times.data'
 
