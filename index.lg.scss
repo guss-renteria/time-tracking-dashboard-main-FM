@@ -1,0 +1,15 @@
+@media screen and (min-width: 992px) {
+  main {
+    section.profile {
+      width: calc(25% - .9rem);
+    }
+
+    section.cards {
+      width: calc(75% - 1.8rem);
+
+      div.card {
+        width: min(100%, calc(33% - 1.6rem));
+      }
+    }
+  }
+}

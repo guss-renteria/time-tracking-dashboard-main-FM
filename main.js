@@ -1,5 +1,7 @@
 import './normalize.css'
 import './index.scss'
+import './index.md.scss'
+import './index.lg.scss'
 
 import { data } from './times.data'
 
@@ -32,6 +34,7 @@ const loadElements = (pos) => {
     cards.innerHTML += element
   }
 
+  stopMenuPropagation()
   return cards.children
 }
 
@@ -58,6 +61,23 @@ const handleEvent = (option) => {
   }
 }
 
+// [+] corregir la propagación 'hover' del menu
+const stopMenuPropagation = () => {
+  console.log('[+] stopMenuPropagation()')
+
+  let card_container = document.querySelectorAll('.card-container')
+  let menu_list = document.querySelectorAll('.menu')
+
+  for(let i = 0; i < card_container.length; i++) {
+    menu_list[i].addEventListener('mouseover', () => {
+      card_container[i].style.background = 'hsl(235, 46%, 20%)'
+    })
+    menu_list[i].addEventListener('mouseout', () => {
+      card_container[i].style.background = ''
+    })
+  }
+}
+
 // [*] START
 
 // cargar eventos
@@ -65,3 +85,4 @@ loadEvents()
 
 // * iniciar elementos
 loadElements(0)
+stopMenuPropagation()
