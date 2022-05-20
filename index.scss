@@ -1,8 +1,8 @@
 $blue: hsl(246, 80%, 60%);
 
-$light_red: hsl(15, 100%, 70%); // work
+$light_red_w: hsl(15, 100%, 70%); // work
 $soft_blue: hsl(195, 74%, 62%); // play
-$light_red: hsl(348, 100%, 68%); // study
+$light_red_s: hsl(348, 100%, 68%); // study
 $lime_green: hsl(145, 58%, 55%); // exercise
 $violet: hsl(264, 64%, 52%); // social
 $soft_orange: hsl(43, 84%, 65%); // self care
@@ -19,7 +19,6 @@ $pale_blue: hsl(236, 100%, 87%);
 
   color: white;
   font-family: 'Rubik', sans-serif;
-  background: $very_dark_blue;
   -webkit-tap-highlight-color: transparent;
 }
 html {
@@ -29,8 +28,231 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 body {
+  background: $very_dark_blue;
 }
 
 footer {
   display: none;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  padding: 8rem 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  
+  section.profile {
+    width: 100%;
+    margin-bottom: 3.2rem;
+    overflow: hidden;
+    background: $dark_blue;
+    border-radius: 1.6rem;
+
+    .profile-user {
+      padding: 3.2rem 0;
+      background: $blue;
+      border-radius: 1.6rem;
+      box-shadow: 0 0 1rem $very_dark_blue;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 8rem;
+        height: 8rem;
+
+        border: .4rem solid white;
+        border-radius: 100%;
+      }
+      div {
+        margin-left: 2rem;
+        font-size: 2.4rem;
+        font-weight: 400;
+
+        p {
+          margin-bottom: .9rem;
+
+          color: $pale_blue;
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .profile-options {
+      padding: 3.2rem 0;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      div {
+        width: 7ch;
+        padding: .5rem;
+        cursor: pointer;
+
+        color: $pale_blue;
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        transition: .2s ease;
+
+        &:hover,
+        &.active {
+          color: white;
+        }
+      }
+    }
+  }
+  section.cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    div.card {
+      margin-bottom: 3.2rem;
+      padding-top: 4.4rem;
+      width: 100%;
+
+      position: relative;
+
+      &::before {
+        z-index: -1;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 2.8rem 2.8rem 100% 100%;
+      }
+
+      &.Work {
+        background: url('./images/icon-work.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -1rem;
+
+        &::before {
+          background: $light_red_w;
+        }
+      }
+
+      &.Play {
+        background: url('./images/icon-play.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -.8rem;
+
+        &::before {
+          background: $soft_blue;
+        }
+      }
+
+      &.Study {
+        background: url('./images/icon-study.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -.2rem;
+
+        &::before {
+          background: $light_red_s;
+        }
+      }
+      
+      &.Exercise {
+        background: url('./images/icon-exercise.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -.2rem;
+
+        &::before {
+          background: $lime_green;
+        }
+      }
+      
+      &.Social {
+        background: url('./images/icon-social.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -1rem;
+
+        &::before {
+          background: $violet;
+        }
+      }
+
+      &[class*='Self Care'] {
+        background: url('./images/icon-self-care.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: -1rem;
+
+        &::before {
+          background: $soft_orange;
+        }
+      }
+
+      .card-container {
+        border-radius: 1.6rem;
+        padding: 3.2rem;
+        background-color: $dark_blue;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        transition: .2s ease;
+
+        &:hover {
+          background: $desaturated_blue;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        .menu {
+          width: 2.1rem;
+          height: .5rem;
+          padding: 1rem 0;
+          cursor: pointer;
+
+          background: url('./images/icon-ellipsis.svg');
+          background-repeat: no-repeat;
+          background-position-y: .5rem;
+
+          transition: .2s ease;
+
+          &:hover {
+            transform: scale(1.15);
+          }
+        }
+
+        .data-times {
+          width: 100%;
+          margin-top: .9rem;
+
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          .current-time {
+            font-size: 2.8rem;
+            font-weight: 300;
+          }
+          .previous-time {
+            color: $pale_blue;
+            font-size: 1.6rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
 }
