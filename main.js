@@ -12,6 +12,8 @@ import icon_exercise from './images/icon-exercise.svg'
 import icon_social from './images/icon-social.svg'
 import icon_self_care from './images/icon-self-care.svg'
 
+import icon_menu from './images/icon-ellipsis.svg'
+
 const options = document.querySelector('div.profile-options')?.children
 const cards = document.querySelector('section.cards')
 
@@ -93,7 +95,6 @@ const importBackgroundImages = () => {
 
   let cards = document.querySelectorAll('.card')
   for(let card of cards) {
-
     if([...card.classList].includes('Work')) {
       card.style.background = `url(${ icon_work })`
       card.style.backgroundPositionY = '-1rem'
@@ -121,6 +122,11 @@ const importBackgroundImages = () => {
 
     card.style.backgroundRepeat = 'no-repeat'
     card.style.backgroundPositionX = '90%'
+
+    let menu = card.querySelector('.menu')
+    menu.style.background = `url(${ icon_menu })`
+    menu.style.backgroundRepeat = 'no-repeat'
+    menu.style.backgroundPositionY = '.5rem'
   }
 }
 
