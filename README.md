@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor]()
-- Live Site URL: [Vercel]()
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/page-created-with-vite-and-js-es6-aJ84F7dHkp)
+- Live Site URL: [Vercel](https://time-tracking-dashboard-main-fm.vercel.app/)
 
 ## My process
 
